@@ -67,7 +67,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="/home/home">Podsumowanie<span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="/home/users">Uzytkownicy</a></li>
+            <li><a href="/home/users">Uzytkownicy</a></li>
             <li><a href="/home/equipment">Przedmioty</a></li>
             <li><a href="/home/producers">Producenci</a></li>
           </ul>
@@ -75,22 +75,10 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <h1 class="page-header">Uzytkownicy</h1>
-            <h2 class="sub-header">Dodaj uzytkoniwka</h2>
-            <c:if test="${resultCause =='1'}">
-                <div class="alert alert-success" role="alert">
-                    <strong>Well done!</strong> ${msg}
-                </div>
-            </c:if>
-
-            <c:if test="${resultCause =='0'}">
-                <div class="alert alert-danger" role="alert">
-                    <strong>Oh No! </strong> ${msg}
-                </div>
-            </c:if>
-
+            <h2 class="sub-header">Edycja uzytkownikaa</h2>
             <div class="table-responsive">
                 <table class="table">
-                    <form:form action="/home/addUser" method="POST" >
+                    <form:form action="/home/editConfirm" method="POST" >
                     <thead>
                     <tr>
 
@@ -103,62 +91,15 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td><form:input class="form-control" placeholder="Imie..." path="firstName" /> </td>
-                                <td><form:input class="form-control" placeholder="Nazwisko..." path="lastName" /></td>
-                                <td><input type="submit" value="Dodaj Uzytkownika" class="btn btn-primary"/></td>
+                                <td><form:input class="form-control" value="${user.firstName}" path="firstName" /> </td>
+                                <td><form:input class="form-control" value="${user.lastName}" path="lastName" /></td>
+                                <form:hidden path="id" value="${user.id}"/>
+                                <td><input type="submit" value="Zapisz" class="btn btn-primary"/></td>
                             </tr>
                     </form:form>
                     </tbody>
                 </table>
-
-
-            <h2 class="page-header">User List</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Imie</th>
-                        <th>Nazwisko</th>
-                        <th>Produkty</th>
-                        <th>Akcje</th>
-                    </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                    <c:if test="${not empty userList}">
-                        <c:forEach var="user" items="${userList}">
-                            <tr>
-                                <td style="width: 5px">${user.id}</td>
-                                <td>${user.firstName}</td>
-                                <td>${user.lastName}</td>
-                                <td>
-                                    <c:forEach var="product" items="${user.products}">
-                                        ${product.name}
-                                    </c:forEach>
-                                </td>
-                                <td>
-                                    <form:form action="/home/userAction" method="post">
-                                    <button type="submit" class="btn btn-info"  name="action" value="editItem">Edycja przedmiotow</button>
-                                    <button type="submit" class="btn btn-info"   name ="action" value="editUser">Edycja danych</button>
-                                    <button type="submit" class="btn btn-warning"  name ="action" value="delUser">Usuwanie</button>
-                                        <form:hidden path="id" value="${user.id}"/>
-                                    </form:form>
-
-                                </td>
-
-                            </tr>
-                        </c:forEach>
-                    </c:if>
-
-                    <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/users?size=${size}&pageUser=${pageUser-1}'" >&lt;prev</button>
-                    <span class="badge">&nbsp;${pageUser}&nbsp; </span>
-                    <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/users?size=${size}&pageUser=${pageUser+1}'" >next&gt;</button>
-                    </tbody>
-
-                </table>
+            </div>
 
         </div>
       </div>

@@ -26,11 +26,6 @@ public class WelcomeController {
 
 
 
-    @RequestMapping("/home/users")
-    public String hello2(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        return "home/users";
-    }
-
     @RequestMapping("/home/equipment")
     public String hello3(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         return "home/equipment";

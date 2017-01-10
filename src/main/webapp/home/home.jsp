@@ -85,8 +85,11 @@
                   <th>Nazwisko</th>
                   <th>Produkty</th>
                 </tr>
+
               </thead>
+
               <tbody>
+
                 <c:if test="${not empty userList}">
                     <c:forEach var="user" items="${userList}">
                 <tr>
@@ -96,14 +99,19 @@
                   <td>
                     <c:forEach var="product" items="${user.products}">
                         ${product.name}
-
                     </c:forEach>
                   </td>
                 </tr>
                     </c:forEach>
                 </c:if>
+                <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser-1}&pageProt=${pageProt}&pagePror=${pagePror}'" >&lt;prev</button>
+                <span class="badge">&nbsp;${pageUser}&nbsp; </span>
+                <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser+1}&pageProt=${pageProt}&pagePror=${pagePror}'" >next&gt;</button>
+
               </tbody>
+
             </table>
+
           </div>
         </div>
 
@@ -137,6 +145,9 @@
                               </tr>
                           </c:forEach>
                       </c:if>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror-1}'" >&lt;prev</button>
+                      <span class="badge">&nbsp;${pagePror}&nbsp; </span>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror+1}'" >next&gt;</button>
                       </tbody>
                   </table>
               </div>
@@ -157,11 +168,14 @@
                       <c:if test="${not empty producerList}">
                           <c:forEach var="producer" items="${producerList}">
                               <tr>
-                                  <td style="width: 5px">${producer.id}</td>
+                                  <td>${producer.id}</td>
                                   <td>${producer.name}</td>
                               </tr>
                           </c:forEach>
                       </c:if>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror-1}'" >&lt;prev</button>
+                      <span class="badge">&nbsp;${pagePror}&nbsp; </span>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror+1}'" >next&gt;</button>
                       </tbody>
                   </table>
               </div>

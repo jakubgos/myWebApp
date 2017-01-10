@@ -14,7 +14,7 @@ import java.util.*;
  * Created by Bos on 2017-01-06.
  */
 @RestController
-public class UserController {
+public class Helper {
 
 
 

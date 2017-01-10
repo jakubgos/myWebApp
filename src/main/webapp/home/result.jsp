@@ -1,8 +1,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <meta http-equiv="refresh" content="3;url=${back}" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,20 +69,17 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="/home/home">Podsumowanie<span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="/home/users">Uzytkownicy</a></li>
+            <li><a href="/home/users">Uzytkownicy</a></li>
             <li><a href="/home/equipment">Przedmioty</a></li>
             <li><a href="/home/producers">Producenci</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-            <h1 class="page-header">Uzytkownicy</h1>
-            <h2 class="sub-header">Dodaj uzytkoniwka</h2>
-            <c:if test="${resultCause =='1'}">
-                <div class="alert alert-success" role="alert">
-                    <strong>Well done!</strong> ${msg}
-                </div>
-            </c:if>
+<c:if test="${resultCause =='1'}">
+            <div class="alert alert-success" role="alert">
+                <strong>Well done!</strong> ${msg}
+            </div>
+</c:if>
 
             <c:if test="${resultCause =='0'}">
                 <div class="alert alert-danger" role="alert">
@@ -88,80 +87,12 @@
                 </div>
             </c:if>
 
-            <div class="table-responsive">
-                <table class="table">
-                    <form:form action="/home/addUser" method="POST" >
-                    <thead>
-                    <tr>
-
-                        <th><form:label path="firstName">Imie</form:label></th>
-                        <th><form:label path="lastName">Nazwisko</form:label></th>
-
-                        <th>Akcja</th>
-                    </tr>
-
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <td><form:input class="form-control" placeholder="Imie..." path="firstName" /> </td>
-                                <td><form:input class="form-control" placeholder="Nazwisko..." path="lastName" /></td>
-                                <td><input type="submit" value="Dodaj Uzytkownika" class="btn btn-primary"/></td>
-                            </tr>
-                    </form:form>
-                    </tbody>
-                </table>
-
-
-            <h2 class="page-header">User List</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Imie</th>
-                        <th>Nazwisko</th>
-                        <th>Produkty</th>
-                        <th>Akcje</th>
-                    </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                    <c:if test="${not empty userList}">
-                        <c:forEach var="user" items="${userList}">
-                            <tr>
-                                <td style="width: 5px">${user.id}</td>
-                                <td>${user.firstName}</td>
-                                <td>${user.lastName}</td>
-                                <td>
-                                    <c:forEach var="product" items="${user.products}">
-                                        ${product.name}
-                                    </c:forEach>
-                                </td>
-                                <td>
-                                    <form:form action="/home/userAction" method="post">
-                                    <button type="submit" class="btn btn-info"  name="action" value="editItem">Edycja przedmiotow</button>
-                                    <button type="submit" class="btn btn-info"   name ="action" value="editUser">Edycja danych</button>
-                                    <button type="submit" class="btn btn-warning"  name ="action" value="delUser">Usuwanie</button>
-                                        <form:hidden path="id" value="${user.id}"/>
-                                    </form:form>
-
-                                </td>
-
-                            </tr>
-                        </c:forEach>
-                    </c:if>
-
-                    <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/users?size=${size}&pageUser=${pageUser-1}'" >&lt;prev</button>
-                    <span class="badge">&nbsp;${pageUser}&nbsp; </span>
-                    <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/users?size=${size}&pageUser=${pageUser+1}'" >next&gt;</button>
-                    </tbody>
-
-                </table>
-
+            <a href="${back}">Wroc</a>
         </div>
+
       </div>
+
+
     </div>
 
     <!-- Bootstrap core JavaScript
