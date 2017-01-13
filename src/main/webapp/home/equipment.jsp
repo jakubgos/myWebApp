@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,8 +11,10 @@
     <meta name="author" content="">
     <link rel="icon" href="/bootstrap/docs/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+        <title>Wypozyczalnia</title>
 
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/docs/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -30,6 +34,8 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
     <![endif]-->
   </head>
 
@@ -44,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Wypozyczalnia</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -71,159 +77,102 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
+            <h1 class="page-header">Producenci</h1>
+            <h2 class="sub-header">Dodaj Przedmiot</h2>
+            <c:if test="${resultCause =='1'}">
+                <div class="alert alert-success" role="alert">
+                    <strong>Well done!</strong> ${msg}
+                </div>
+            </c:if>
 
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <c:if test="${resultCause =='0'}">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh No! </strong> ${msg}
+                </div>
+            </c:if>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <form:form action="/home/addEquipment" method="POST" >
+                    <thead>
+                    <tr>
+
+                        <th><form:label path="name">Nazwa</form:label></th>
+                        <th><form:label path="producerId">Producent</form:label></th>
+                        <th>Akcja</th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><form:input class="form-control" placeholder="Nazwa..." path="name" /> </td>
+                        <td>
+                            <form:select class="form-control"  path="idEqSelected">
+                                <form:option value="NONE"> --SELECT--</form:option>
+                                <c:forEach var="eqa" items="${producentList}">
+                                    <form:option value="${eqa.id}"  >${eqa.name}</form:option>
+                                </c:forEach>
+                            </form:select>
+                        </td>
+                        <td><input type="submit" value="Dodaj Przedmiot" class="btn btn-primary"/></td>
+                    </tr>
+
+
+                    </form:form>
+                    </tbody>
+                </table>
+
+
+                <h2 class="page-header">Lista Przedmiotow</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nazwa</th>
+                            <th>Producent</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:if test="${not empty equipmentList}">
+                            <c:forEach var="product" items="${equipmentList}">
+                                <tr>
+                                    <td style="width: 5px">${product.id}</td>
+                                    <td>${product.name}</td>
+                                    <td>${product.producer.name}</td>
+                                    <td>
+                                        <c:if test="${product.isBorrowed=='0'}">
+                                            <span class="label label-success">Wolny</span>
+                                        </c:if>
+                                        <c:if test="${product.isBorrowed =='1'}">
+                                            <span class="label label-danger">Wypozyczony</span>
+                                        </c:if>
+                                    </td>
+
+                                    <td>
+                                        <form:form action="/home/userActionEquipment" method="post">
+                                            <button type="submit" class="btn btn-info"  name="action" value="editEq">Edycja Przedmiotu</button>
+                                            <button type="submit" class="btn btn-warning"  name ="action" value="delEq">Usuwanie</button>
+                                            <form:hidden path="id" value="${product.id}"/>
+                                        </form:form>
+
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </c:if>
+
+
+                        <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/equipment?size=${size}&page=${page-1}'" >&lt;prev</button>
+                        <span class="badge">&nbsp;${page}&nbsp; </span>
+                        <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/equipment?size=${size}&page=${page+1}'" >next&gt;</button>
+                        </tbody>
+                    </table>
+
+                    </table>
+
         </div>
       </div>
     </div>

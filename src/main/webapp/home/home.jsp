@@ -12,7 +12,8 @@
     <meta name="author" content="">
     <link rel="icon" href="/bootstrap/docs/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+        <title>Wypozyczalnia</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Wypozyczalnia</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -145,9 +146,9 @@
                               </tr>
                           </c:forEach>
                       </c:if>
-                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror-1}'" >&lt;prev</button>
-                      <span class="badge">&nbsp;${pagePror}&nbsp; </span>
-                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt}&pagePror=${pagePror+1}'" >next&gt;</button>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt-1}&pagePror=${pagePror}'" >&lt;prev</button>
+                      <span class="badge">&nbsp;${pageProt}&nbsp; </span>
+                      <button type="button" class="btn btn-xs btn-default" onclick="location.href='/home/home?size=${size}&pageUser=${pageUser}&pageProt=${pageProt+1}&pagePror=${pagePror}'" >next&gt;</button>
                       </tbody>
                   </table>
               </div>

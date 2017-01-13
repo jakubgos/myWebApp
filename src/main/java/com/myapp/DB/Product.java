@@ -21,15 +21,22 @@ public class Product {
 
     private String name;
 
+
+
     public Product(Producer producer, String name, Long isBorrowed) {
         this.producer = producer;
         this.name = name;
         this.isBorrowed = isBorrowed;
     }
 
-    public Product() {
-
+    public Product(Producer one, String name) {
+        this.producer = one;
+        this.name = name;
     }
+
+    public Product() {
+    }
+
 
     public Long getId() {
         return id;

@@ -24,7 +24,6 @@ public class HomeController {
     @Autowired
     private ProductRepository productRepository;
 
-
     @RequestMapping(value = {"/","/home/home"})
     public ModelAndView homeReq(
                     @RequestParam(value="size", required=false, defaultValue="5") int size,

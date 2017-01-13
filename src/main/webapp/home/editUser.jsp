@@ -11,7 +11,8 @@
     <meta name="author" content="">
     <link rel="icon" href="/bootstrap/docs/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+        <title>Wypozyczalnia</title>
+
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/docs/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Wypozyczalnia</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

@@ -1,6 +1,7 @@
 package com.myapp.DB;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -43,6 +44,11 @@ public class User {
 
     }
 
+    public User(Long userId) {
+        this.id=userId;
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -68,6 +74,9 @@ public class User {
     }
 
     public List<Product> getProducts() {
+        if (products==null){
+            return new LinkedList<Product>();
+        }
         return products;
     }
 

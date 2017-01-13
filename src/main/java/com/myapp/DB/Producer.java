@@ -23,6 +23,12 @@ public class Producer {
     public Producer() {
 
     }
+
+    public Producer(long id, String name) {
+        this.id=id;
+        this.name=name;
+    }
+
     public Long getId() {
         return id;
     }

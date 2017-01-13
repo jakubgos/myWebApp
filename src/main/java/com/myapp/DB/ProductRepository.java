@@ -10,5 +10,6 @@ import java.util.List;
  */
 public interface ProductRepository extends PagingAndSortingRepository<Product,Long> {
 
+    List<Product> findByIsBorrowed(Long isBorrowed);
 
 }
